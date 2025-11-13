@@ -6,7 +6,8 @@ Authors: Yury Kudryashov
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Analysis.Calculus.FDeriv.Add
-import Mathlib.Analysis.Calculus.FDeriv.Mul 
+import Mathlib.Analysis.Calculus.FDeriv.Mul
+
 /-!
 # Slope of a differentiable function
 
@@ -20,7 +21,7 @@ differentiability.
 
 open scoped Topology Filter
 
-open Function Set Filter Complex
+open Function Set Filter
 
 variable {𝕜 E : Type*} [NontriviallyNormedField 𝕜] [NormedAddCommGroup E] [NormedSpace 𝕜 E]
 
@@ -139,4 +140,3 @@ alias differentiableOn_dslope_of_nmem := differentiableOn_dslope_of_notMem
 theorem differentiableAt_dslope_of_ne (h : b ≠ a) :
     DifferentiableAt 𝕜 (dslope f a) b ↔ DifferentiableAt 𝕜 f b := by
   simp only [← differentiableWithinAt_univ, differentiableWithinAt_dslope_of_ne h]
-
